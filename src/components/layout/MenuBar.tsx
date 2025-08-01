@@ -50,10 +50,10 @@ const finderMetadata = {
   name: "Finder",
   version: "1.0.0",
   creator: {
-    name: "Ryo Lu",
-    url: "https://ryo.lu",
+    name: "Muhammad Irsyad",
+    url: "https://irxd.dev",
   },
-  github: "https://github.com/ryokun6/ryos",
+  github: "https://github.com/irxd/irxos",
   icon: "/icons/mac.png",
 };
 
@@ -489,11 +489,10 @@ function VolumeControl() {
         <Button
           variant="ghost"
           size="icon"
-          className={`h-6 w-7 text-md px-1 py-1 border-none focus-visible:ring-0 ${
-            isXpTheme
+          className={`h-6 w-7 text-md px-1 py-1 border-none focus-visible:ring-0 ${isXpTheme
               ? "hover:bg-white/20 active:bg-white/30"
               : "hover:bg-black/10 active:bg-black/20"
-          } ${isXpTheme ? "" : "mr-2"}`}
+            } ${isXpTheme ? "" : "mr-2"}`}
           style={{
             color:
               isXpTheme && currentTheme === "win98" ? "#000000" : "inherit",
@@ -696,8 +695,8 @@ export function MenuBar({ children, inWindowFrame = false }: MenuBarProps) {
                           ? "#3980f4"
                           : "#c0c0c0"
                         : currentTheme === "xp"
-                        ? "#1658dd"
-                        : "#c0c0c0",
+                          ? "#1658dd"
+                          : "#c0c0c0",
                       border:
                         currentTheme === "xp"
                           ? isForeground
@@ -710,8 +709,8 @@ export function MenuBar({ children, inWindowFrame = false }: MenuBarProps) {
                         currentTheme === "xp"
                           ? "2px 2px 5px rgba(255, 255, 255, 0.267) inset"
                           : isForeground
-                          ? "inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey"
-                          : "inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf",
+                            ? "inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey"
+                            : "inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf",
                       transition: "all 0.1s ease",
                     }}
                     onMouseEnter={(e) => {
@@ -882,24 +881,23 @@ export function MenuBar({ children, inWindowFrame = false }: MenuBarProps) {
               <VolumeControl />
             </div>
             <div
-              className={`text-xs ${isXpTheme ? "font-bold" : "font-normal"} ${
-                isXpTheme ? "" : "px-2"
-              }`}
+              className={`text-xs ${isXpTheme ? "font-bold" : "font-normal"} ${isXpTheme ? "" : "px-2"
+                }`}
               style={{
                 color:
                   currentTheme === "win98"
                     ? "#000000"
                     : isXpTheme
-                    ? "#ffffff"
-                    : "#000000",
+                      ? "#ffffff"
+                      : "#000000",
                 textShadow:
                   currentTheme === "xp"
                     ? "1px 1px 1px rgba(0,0,0,0.5)"
                     : currentTheme === "win98"
-                    ? "none"
-                    : currentTheme === "macosx"
-                    ? "0 2px 3px rgba(0, 0, 0, 0.25)"
-                    : "none",
+                      ? "none"
+                      : currentTheme === "macosx"
+                        ? "0 2px 3px rgba(0, 0, 0, 0.25)"
+                        : "none",
               }}
             >
               <Clock />

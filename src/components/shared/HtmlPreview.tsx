@@ -140,7 +140,7 @@ export const extractHtmlContent = (
   };
 };
 
-// Component to render ryOS Code Previews
+// Component to render irxOS Code Previews
 interface HtmlPreviewProps {
   htmlContent: string;
   onInteractionChange?: (isInteracting: boolean) => void;
@@ -603,7 +603,7 @@ export default function HtmlPreview({
       .replace(/[:.]/g, "-")
       .substring(0, 19);
     a.href = url;
-    a.download = `ryOS-generated-${timestamp}.html`;
+    a.download = `irxOS-generated-${timestamp}.html`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -812,29 +812,27 @@ export default function HtmlPreview({
     <>
       <motion.div
         ref={previewRef}
-        className={`${
-          isInternetExplorer ? "" : "rounded"
-        } bg-white overflow-auto m-0 relative ${className} ${
-          isStreaming ? "loading-pulse" : ""
-        }`}
+        className={`${isInternetExplorer ? "" : "rounded"
+          } bg-white overflow-auto m-0 relative ${className} ${isStreaming ? "loading-pulse" : ""
+          }`}
         style={{
           maxHeight: isInternetExplorer
             ? "100%"
             : isFullScreen
-            ? originalHeight || minHeight
-            : maxHeight,
+              ? originalHeight || minHeight
+              : maxHeight,
           // pointerEvents: isStreaming ? "none" : "auto", // Allow interaction with text stream potentially
           opacity: isFullScreen ? 0 : 1,
           height: isInternetExplorer
             ? "100%"
             : isFullScreen
-            ? originalHeight || minHeight
-            : "auto",
+              ? originalHeight || minHeight
+              : "auto",
           boxShadow: isInternetExplorer
             ? "none"
             : isFullScreen
-            ? "none"
-            : "0 0 0 1px rgba(0, 0, 0, 0.3)",
+              ? "none"
+              : "0 0 0 1px rgba(0, 0, 0, 0.3)",
           visibility: isFullScreen ? "hidden" : "visible",
           minHeight: minHeight, // Ensure minHeight is respected
         }}
@@ -944,8 +942,8 @@ export default function HtmlPreview({
               maxHeight: isInternetExplorer
                 ? "100%"
                 : typeof minHeight === "string"
-                ? minHeight
-                : `${minHeight}px`,
+                  ? minHeight
+                  : `${minHeight}px`,
             }}
           >
             {streamPreviewHtml ? (
@@ -965,15 +963,15 @@ export default function HtmlPreview({
             id={iframeId}
             // srcDoc is now set by useEffect after streaming finishes
             // srcDoc={processedHtmlContent()}
-            title="ryOS Code Preview"
+            title="irxOS Code Preview"
             className="w-full h-full border-0"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-modals allow-pointer-lock allow-downloads allow-storage-access-by-user-activation"
             style={{
               height: isInternetExplorer
                 ? "100%"
                 : typeof minHeight === "string"
-                ? minHeight
-                : `${minHeight}px`,
+                  ? minHeight
+                  : `${minHeight}px`,
               display: "block",
               // pointerEvents: isStreaming ? "none" : "auto", // Already handled by parent div conditional
               position: "relative",
@@ -1098,7 +1096,7 @@ export default function HtmlPreview({
                         id={`fullscreen-${iframeId}`}
                         // srcDoc is now set by useEffect after streaming finishes
                         // srcDoc={processedHtmlContent()}
-                        title="ryOS Code Preview Fullscreen"
+                        title="irxOS Code Preview Fullscreen"
                         className="border-0 bg-white w-full h-full"
                         sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-modals allow-pointer-lock allow-downloads allow-storage-access-by-user-activation"
                         onClick={(e) => e.stopPropagation()}

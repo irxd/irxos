@@ -82,16 +82,16 @@ export function AboutFinderDialog({
                     : "font-apple-garamond text-2xl"
                 )}
               >
-                ryOS
+                irxOS
                 {currentTheme === "system7"
                   ? " 7"
                   : currentTheme === "macosx"
-                  ? " X"
-                  : currentTheme === "win98"
-                  ? " 98"
-                  : currentTheme === "xp"
-                  ? " XP"
-                  : ""}
+                    ? " X"
+                    : currentTheme === "win98"
+                      ? " 98"
+                      : currentTheme === "xp"
+                        ? " XP"
+                        : ""}
               </div>
             </div>
 
@@ -203,7 +203,7 @@ export function AboutFinderDialog({
                 About This Computer
               </DialogTitle>
               <DialogDescription className="sr-only">
-                Information about ryOS on this computer
+                Information about irxOS on this computer
               </DialogDescription>
             </DialogHeader>
             {dialogContent}

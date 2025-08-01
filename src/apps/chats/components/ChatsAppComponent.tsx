@@ -487,20 +487,20 @@ export function ChatsAppComponent({
   // Explicitly type the array using the local DisplayMessage interface
   const currentMessagesToDisplay: DisplayMessage[] = currentRoomId
     ? currentRoomMessages.map((msg: AppChatMessage) => ({
-        // For room messages, use clientId (if present) for stable rendering key
-        id: msg.clientId || msg.id,
-        serverId: msg.id,
-        role: msg.username === username ? "user" : "human",
-        content: msg.content,
-        createdAt: new Date(msg.timestamp), // Ensure this is a Date object
-        username: msg.username,
-      }))
+      // For room messages, use clientId (if present) for stable rendering key
+      id: msg.clientId || msg.id,
+      serverId: msg.id,
+      role: msg.username === username ? "user" : "human",
+      content: msg.content,
+      createdAt: new Date(msg.timestamp), // Ensure this is a Date object
+      username: msg.username,
+    }))
     : messages.map((msg: UIMessage) => ({
-        ...msg,
-        // Ensure createdAt is a Date object if it exists, otherwise undefined
-        createdAt: msg.createdAt ? new Date(msg.createdAt) : undefined,
-        username: msg.role === "user" ? username || "You" : "Ryo",
-      }));
+      ...msg,
+      // Ensure createdAt is a Date object if it exists, otherwise undefined
+      createdAt: msg.createdAt ? new Date(msg.createdAt) : undefined,
+      username: msg.role === "user" ? username || "You" : "Ryo",
+    }));
 
   return (
     <>
@@ -525,9 +525,8 @@ export function ChatsAppComponent({
       >
         <div
           ref={containerRef}
-          className={`relative h-full w-full ${
-            isWindowsLegacyTheme ? "border-t border-[#919b9c]" : ""
-          }`}
+          className={`relative h-full w-full ${isWindowsLegacyTheme ? "border-t border-[#919b9c]" : ""
+            }`}
         >
           {/* Mobile sidebar overlay with framer-motion 3D animations */}
           <AnimatePresence>
@@ -628,21 +627,20 @@ export function ChatsAppComponent({
                 className={`sticky top-0 z-10 flex items-center justify-between px-2 py-1 border-b ${
                   // Layer pinstripes with semi-transparent white via backgroundImage for macOS
                   isMacTheme ? "" : "bg-neutral-200/90 backdrop-blur-lg"
-                } ${
-                  isWindowsLegacyTheme
+                  } ${isWindowsLegacyTheme
                     ? "border-[#919b9c]"
                     : isMacTheme
-                    ? ""
-                    : "border-black"
-                }`}
+                      ? ""
+                      : "border-black"
+                  }`}
                 style={
                   isMacTheme
                     ? {
-                        backgroundImage: "var(--os-pinstripe-window)",
-                        opacity: 0.95,
-                        borderBottom:
-                          "var(--os-metrics-titlebar-border-width, 1px) solid var(--os-color-titlebar-border-inactive, rgba(0, 0, 0, 0.2))",
-                      }
+                      backgroundImage: "var(--os-pinstripe-window)",
+                      opacity: 0.95,
+                      borderBottom:
+                        "var(--os-metrics-titlebar-border-width, 1px) solid var(--os-color-titlebar-border-inactive, rgba(0, 0, 0, 0.2))",
+                    }
                     : undefined
                 }
               >
@@ -679,7 +677,7 @@ export function ChatsAppComponent({
                       className="flex items-center gap-1 px-2 py-1 h-7"
                     >
                       <span className="font-geneva-12 text-[11px] text-orange-600 hover:text-orange-700">
-                        Login to ryOS
+                        Login to irxOS
                       </span>
                     </Button>
                   )}
@@ -757,7 +755,7 @@ export function ChatsAppComponent({
                       1. In a chat room without username
                       2. In @ryo chat when rate limit is hit for anonymous users */}
                   {(currentRoomId && !username) ||
-                  (!currentRoomId && needsUsername && !username) ? (
+                    (!currentRoomId && needsUsername && !username) ? (
                     isMacTheme ? (
                       <Button
                         variant="secondary"
@@ -769,11 +767,10 @@ export function ChatsAppComponent({
                     ) : (
                       <Button
                         onClick={promptSetUsername}
-                        className={`w-full h-9 font-geneva-12 text-[12px] ${
-                          isXpTheme
+                        className={`w-full h-9 font-geneva-12 text-[12px] ${isXpTheme
                             ? "text-black"
                             : "bg-orange-600 text-white hover:bg-orange-700 transition-all duration-200"
-                        }`}
+                          }`}
                       >
                         {"Login to Chat"}
                       </Button>

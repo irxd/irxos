@@ -126,8 +126,8 @@ const getSystemState = () => {
   const currentVideo = videoStore.getCurrentVideo();
   const currentTrack =
     ipodStore.tracks &&
-    ipodStore.currentIndex >= 0 &&
-    ipodStore.currentIndex < ipodStore.tracks.length
+      ipodStore.currentIndex >= 0 &&
+      ipodStore.currentIndex < ipodStore.tracks.length
       ? ipodStore.tracks[ipodStore.currentIndex]
       : null;
 
@@ -231,11 +231,11 @@ const getSystemState = () => {
     video: {
       currentVideo: currentVideo
         ? {
-            id: currentVideo.id,
-            url: currentVideo.url,
-            title: currentVideo.title,
-            artist: currentVideo.artist,
-          }
+          id: currentVideo.id,
+          url: currentVideo.url,
+          title: currentVideo.title,
+          artist: currentVideo.artist,
+        }
         : null,
       isPlaying: videoStore.isPlaying,
       loopAll: videoStore.loopAll,
@@ -245,11 +245,11 @@ const getSystemState = () => {
     ipod: {
       currentTrack: currentTrack
         ? {
-            id: currentTrack.id,
-            url: currentTrack.url,
-            title: currentTrack.title,
-            artist: currentTrack.artist,
-          }
+          id: currentTrack.id,
+          url: currentTrack.url,
+          title: currentTrack.title,
+          artist: currentTrack.artist,
+        }
         : null,
       isPlaying: ipodStore.isPlaying,
       loopAll: ipodStore.loopAll,
@@ -2172,15 +2172,15 @@ assistant
               const dateStr = `${(date.getMonth() + 1)
                 .toString()
                 .padStart(2, "0")}/${date
-                .getDate()
-                .toString()
-                .padStart(2, "0")} ${date
-                .getHours()
-                .toString()
-                .padStart(2, "0")}:${date
-                .getMinutes()
-                .toString()
-                .padStart(2, "0")}`;
+                  .getDate()
+                  .toString()
+                  .padStart(2, "0")} ${date
+                    .getHours()
+                    .toString()
+                    .padStart(2, "0")}:${date
+                      .getMinutes()
+                      .toString()
+                      .padStart(2, "0")}`;
 
               return `${indexStr}  ${paddedCmd}  # ${dateStr}`;
             })
@@ -2528,7 +2528,7 @@ assistant
             id: "system",
             role: "system",
             content:
-              "You are a coding assistant running in the terminal app on ryOS.",
+              "You are a coding assistant running in the terminal app on irxOS.",
           },
         ]);
 
@@ -2721,7 +2721,7 @@ assistant
           id: "system",
           role: "system",
           content:
-            "You are a coding assistant running in the terminal app on ryOS.",
+            "You are a coding assistant running in the terminal app on irxOS.",
         },
       ]);
 
@@ -2755,7 +2755,7 @@ assistant
           id: "system",
           role: "system",
           content:
-            "You are a coding assistant running in the terminal app on ryOS.",
+            "You are a coding assistant running in the terminal app on irxOS.",
         },
       ]);
 
@@ -3105,9 +3105,9 @@ assistant
     const percentage =
       lines.length > 0
         ? Math.min(
-            100,
-            Math.floor(((position + maxVisibleLines) / lines.length) * 100)
-          )
+          100,
+          Math.floor(((position + maxVisibleLines) / lines.length) * 100)
+        )
         : 100;
 
     return (
@@ -3142,15 +3142,14 @@ assistant
         })}
         <div className="vim-status-bar flex text-white text-xs mt-2">
           <div
-            className={`px-2 py-1 font-bold ${
-              vimMode === "insert" ? "bg-green-600/50" : "bg-blue-600/50"
-            }`}
+            className={`px-2 py-1 font-bold ${vimMode === "insert" ? "bg-green-600/50" : "bg-blue-600/50"
+              }`}
           >
             {vimMode === "normal"
               ? "NORMAL"
               : vimMode === "insert"
-              ? "INSERT"
-              : "COMMAND"}
+                ? "INSERT"
+                : "COMMAND"}
           </div>
           <div className="flex-1 bg-white/10 px-2 py-1 flex items-center justify-between">
             <span className="flex-1 mx-2">[{file.name}]</span>
@@ -3186,9 +3185,8 @@ assistant
               onKeyDown={handleKeyDown}
               onFocus={() => setInputFocused(true)}
               onBlur={() => setInputFocused(false)}
-              className={`flex-1 bg-transparent text-white font-monaco focus:outline-none terminal-input ${
-                inputFocused ? "input--focused" : ""
-              }`}
+              className={`flex-1 bg-transparent text-white font-monaco focus:outline-none terminal-input ${inputFocused ? "input--focused" : ""
+                }`}
               style={{ fontSize: `${fontSize}px` }}
               autoFocus
             />
@@ -3209,14 +3207,14 @@ assistant
               animate={
                 isClearingTerminal
                   ? {
-                      opacity: 0,
-                      y: -100,
-                      filter: "blur(4px)",
-                      transition: {
-                        duration: 0.3,
-                        delay: 0.02 * (commandHistory.length - index),
-                      },
-                    }
+                    opacity: 0,
+                    y: -100,
+                    filter: "blur(4px)",
+                    transition: {
+                      duration: 0.3,
+                      delay: 0.02 * (commandHistory.length - index),
+                    },
+                  }
                   : "animate"
               }
               exit="exit"
@@ -3250,27 +3248,25 @@ assistant
               )}
               {item.output && (
                 <div
-                  className={`ml-0 select-text ${
-                    item.path === "ai-thinking" ? "text-gray-400" : ""
-                  } ${item.path === "ai-assistant" ? "text-purple-100" : ""} ${
-                    item.path === "ai-error" ? "text-red-400" : ""
-                  } ${item.path === "welcome-message" ? "text-gray-400" : ""} ${
+                  className={`ml-0 select-text ${item.path === "ai-thinking" ? "text-gray-400" : ""
+                    } ${item.path === "ai-assistant" ? "text-purple-100" : ""} ${item.path === "ai-error" ? "text-red-400" : ""
+                    } ${item.path === "welcome-message" ? "text-gray-400" : ""} ${
                     // Add urgent message styling
                     isUrgentMessage(item.output) ? "text-red-400" : ""
-                  } ${
+                    } ${
                     // Add system message styling
                     item.output.startsWith("ask ryo anything") ||
-                    item.output.startsWith("usage:") ||
-                    item.output.startsWith("command not found:") ||
-                    item.output.includes("type 'help' for") ||
-                    item.output.includes("no such") ||
-                    item.output.includes("not implemented") ||
-                    item.output.includes("already exists") ||
-                    item.output.startsWith("file not found:") ||
-                    item.output.startsWith("no files found")
+                      item.output.startsWith("usage:") ||
+                      item.output.startsWith("command not found:") ||
+                      item.output.includes("type 'help' for") ||
+                      item.output.includes("no such") ||
+                      item.output.includes("not implemented") ||
+                      item.output.includes("already exists") ||
+                      item.output.startsWith("file not found:") ||
+                      item.output.startsWith("no files found")
                       ? "text-gray-400"
                       : ""
-                  }`}
+                    }`}
                 >
                   {item.path === "ai-thinking" ? (
                     <div>
@@ -3314,7 +3310,7 @@ assistant
                           isAiLoading &&
                           aiMessages.length > 0 &&
                           aiMessages[aiMessages.length - 1].id ===
-                            item.messageId &&
+                          item.messageId &&
                           index === commandHistory.length - 1;
 
                         return (
@@ -3329,17 +3325,17 @@ assistant
                                   const isRes = trimmed.startsWith("→");
                                   const displayLine = isSpin
                                     ? line.replace(
-                                        ":::",
-                                        spinnerChars[spinnerIndex]
-                                      )
+                                      ":::",
+                                      spinnerChars[spinnerIndex]
+                                    )
                                     : line;
                                   const cls = urgent
                                     ? "text-red-300"
                                     : isSpin
-                                    ? "gradient-spin italic"
-                                    : isRes
-                                    ? "text-gray-400"
-                                    : "text-purple-300";
+                                      ? "gradient-spin italic"
+                                      : isRes
+                                        ? "text-gray-400"
+                                        : "text-purple-300";
                                   return (
                                     <span
                                       key={idx}
@@ -3405,8 +3401,8 @@ assistant
                           ? parseSimpleMarkdown(cleanUrgentPrefix(item.output))
                           : cleanUrgentPrefix(item.output)
                         : shouldApplyMarkdown(item.path)
-                        ? parseSimpleMarkdown(item.output)
-                        : item.output}
+                          ? parseSimpleMarkdown(item.output)
+                          : item.output}
                       {isHtmlCodeBlock(item.output).isHtml && (
                         <TerminalHtmlPreview
                           htmlContent={isHtmlCodeBlock(item.output).content}
@@ -3465,9 +3461,8 @@ assistant
                 onTouchStart={(e) => {
                   e.preventDefault();
                 }}
-                className={`w-full text-white font-monaco focus:outline-none bg-transparent terminal-input ${
-                  inputFocused ? "input--focused" : ""
-                }`}
+                className={`w-full text-white font-monaco focus:outline-none bg-transparent terminal-input ${inputFocused ? "input--focused" : ""
+                  }`}
                 style={{ fontSize: `${fontSize}px` }}
                 autoFocus
               />
@@ -3536,9 +3531,9 @@ assistant
           animate={
             terminalFlash
               ? {
-                  filter: ["brightness(1)", "brightness(1.5)", "brightness(1)"],
-                  scale: [1, 1.01, 1],
-                }
+                filter: ["brightness(1)", "brightness(1.5)", "brightness(1)"],
+                scale: [1, 1.01, 1],
+              }
               : {}
           }
           transition={{ duration: 0.3, ease: "easeOut" }}
@@ -3576,10 +3571,10 @@ assistant
             name: "Terminal",
             version: "1.0",
             creator: {
-              name: "Ryo Lu",
-              url: "https://ryo.lu",
+              name: "Muhammad Irsyad",
+              url: "https://irxd.dev",
             },
-            github: "https://github.com/ryokun6/ryos",
+            github: "https://github.com/irxd/irxos",
             icon: "/icons/default/terminal.png",
           }
         }

@@ -6,7 +6,7 @@ export const helpItems = [
     icon: "💬",
     title: "Chat with Ryo",
     description:
-      "Type your message to chat with Ryo, generate code, or help with ryOS.",
+      "Type your message to chat with Irsyad, generate code, or help with irxOS.",
   },
   {
     icon: "#️⃣",
@@ -43,10 +43,10 @@ export const appMetadata = {
   name: "Chats",
   version: "1.0",
   creator: {
-    name: "Ryo Lu",
-    url: "https://ryo.lu",
+    name: "Muhammad Irsyad",
+    url: "https://irxd.dev",
   },
-  github: "https://github.com/ryokun6/ryos",
+  github: "https://github.com/irxd/irxos",
   icon: "/icons/default/question.png",
 };
 
@@ -54,7 +54,7 @@ export const ChatsApp: BaseApp = {
   id: "chats",
   name: "Chats",
   icon: { type: "image", src: appMetadata.icon },
-  description: "Chat with Ryo, your personal AI assistant",
+  description: "Chat with Irsyad, your personal AI assistant",
   component: ChatsAppComponent,
   helpItems,
   metadata: appMetadata,

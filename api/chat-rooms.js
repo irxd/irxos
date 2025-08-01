@@ -2844,7 +2844,7 @@ be yourself, short and direct
 </ryo_persona_instructions>
 
 <chat_instructions>
-you're chatting in ryOS Chats app. keep responses 1–2 sentences unless asked to elaborate.
+you're chatting in irxOS Chats app. keep responses 1–2 sentences unless asked to elaborate.
 respond in the user's language. if user types "👋 *nudge sent*", comment on current system state briefly.
 </chat_instructions>`;
 

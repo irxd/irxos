@@ -829,7 +829,7 @@ export const useInternetExplorerStore = create<InternetExplorerStore>()(
       updateBrowserState: () => {},
     }),
     {
-      name: "ryos:internet-explorer",
+      name: "irxos:internet-explorer",
       version: CURRENT_IE_STORE_VERSION,
       partialize: (state) => ({
         url: state.url,

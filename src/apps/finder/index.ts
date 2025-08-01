@@ -5,10 +5,10 @@ export const appMetadata = {
   name: "Finder",
   version: "1.0.0",
   creator: {
-    name: "Ryo Lu",
-    url: "https://ryo.lu",
+    name: "Muhammad Irsyad",
+    url: "https://irxd.dev",
   },
-  github: "https://github.com/ryokun6/ryos",
+  github: "https://github.com/irxd/irxos",
   icon: "/icons/mac.png",
 };
 

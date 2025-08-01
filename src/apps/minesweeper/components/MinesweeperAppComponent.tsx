@@ -480,16 +480,14 @@ export function MinesweeperAppComponent({
               <div className="flex items-center justify-between text-sm relative w-full">
                 <div className="flex flex-col items-start w-[80px]">
                   <span
-                    className={`font-[ChicagoKare] text-lg leading-none ${
-                      isMacTheme ? "mt-0 mb-1" : "mt-1"
-                    }`}
+                    className={`font-[ChicagoKare] text-lg leading-none ${isMacTheme ? "mt-0 mb-1" : "mt-1"
+                      }`}
                   >
                     {remainingMines}
                   </span>
                   <span
-                    className={`font-[Geneva-9] ${
-                      isMacTheme ? "text-xs" : "text-[16px]"
-                    } mt-[-6px]`}
+                    className={`font-[Geneva-9] ${isMacTheme ? "text-xs" : "text-[16px]"
+                      } mt-[-6px]`}
                   >
                     Left
                   </span>
@@ -514,16 +512,14 @@ export function MinesweeperAppComponent({
                 </div>
                 <div className="flex flex-col items-end w-[80px]">
                   <span
-                    className={`font-[ChicagoKare] text-lg leading-none ${
-                      isMacTheme ? "mt-0 mb-1" : "mt-1"
-                    }`}
+                    className={`font-[ChicagoKare] text-lg leading-none ${isMacTheme ? "mt-0 mb-1" : "mt-1"
+                      }`}
                   >
                     {MINES_COUNT}
                   </span>
                   <span
-                    className={`font-[Geneva-9] ${
-                      isMacTheme ? "text-xs" : "text-[16px]"
-                    } mt-[-6px]`}
+                    className={`font-[Geneva-9] ${isMacTheme ? "text-xs" : "text-[16px]"
+                      } mt-[-6px]`}
                   >
                     Total
                   </span>
@@ -560,8 +556,8 @@ export function MinesweeperAppComponent({
             appMetadata || {
               name: "Minesweeper",
               version: "1.0.0",
-              creator: { name: "Ryo Lu", url: "https://ryo.lu" },
-              github: "https://github.com/ryokun6/ryos",
+              creator: { name: "Muhammad Irsyad", url: "https://irxd.dev" },
+              github: "https://github.com/irxd/irxos",
               icon: "/icons/default/minesweeper.png",
             }
           }

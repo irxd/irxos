@@ -426,8 +426,8 @@ export function LoginDialog({
                 ? "Logging in..."
                 : "Creating..."
               : activeTab === "login"
-              ? "Log In"
-              : "Create Account"}
+                ? "Log In"
+                : "Create Account"}
           </Button>
         </DialogFooter>
       </form>
@@ -443,19 +443,19 @@ export function LoginDialog({
       >
         {isXpTheme ? (
           <>
-            <DialogHeader>ryOS Login</DialogHeader>
+            <DialogHeader>irxOS Login</DialogHeader>
             <div className="window-body">{dialogContent}</div>
           </>
         ) : currentTheme === "macosx" ? (
           <>
-            <DialogHeader>ryOS Login</DialogHeader>
+            <DialogHeader>irxOS Login</DialogHeader>
             {dialogContent}
           </>
         ) : (
           <>
             <DialogHeader>
               <DialogTitle className="font-normal text-[16px]">
-                ryOS Login
+                irxOS Login
               </DialogTitle>
               <DialogDescription className="sr-only">
                 {activeTab === "login"

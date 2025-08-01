@@ -54,8 +54,8 @@ export function StartMenu({ apps }: StartMenuProps) {
                 currentTheme === "xp"
                   ? "-2px -2px 10px #0000008e inset"
                   : isStartMenuOpen
-                  ? "inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey" // Windows 98 pressed
-                  : "inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf", // Windows 98 raised
+                    ? "inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey" // Windows 98 pressed
+                    : "inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf", // Windows 98 raised
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -78,9 +78,8 @@ export function StartMenu({ apps }: StartMenuProps) {
             <ThemedIcon
               name="apple.png"
               alt="Start"
-              className={`[image-rendering:pixelated] ${
-                currentTheme === "xp" ? "w-5 h-4" : "w-5 h-5"
-              }`}
+              className={`[image-rendering:pixelated] ${currentTheme === "xp" ? "w-5 h-4" : "w-5 h-5"
+                }`}
               style={{
                 filter:
                   currentTheme === "xp"
@@ -89,9 +88,8 @@ export function StartMenu({ apps }: StartMenuProps) {
               }}
             />
             <span
-              className={`tracking-wider ${
-                currentTheme === "xp" ? "pr-2" : ""
-              }`}
+              className={`tracking-wider ${currentTheme === "xp" ? "pr-2" : ""
+                }`}
               style={{
                 textShadow:
                   currentTheme === "xp"
@@ -120,8 +118,8 @@ export function StartMenu({ apps }: StartMenuProps) {
               currentTheme === "xp"
                 ? "3px solid #0855dd"
                 : currentTheme === "win98"
-                ? "2px outset #c0c0c0"
-                : "2px outset #c0c0c0",
+                  ? "2px outset #c0c0c0"
+                  : "2px outset #c0c0c0",
             borderRadius: currentTheme === "xp" ? "5px 5px 0 0" : "0",
           }}
         >
@@ -151,7 +149,7 @@ export function StartMenu({ apps }: StartMenuProps) {
                     textAlign: "left",
                   }}
                 >
-                  ryOS{" "}
+                  irxOS{" "}
                   <span style={{ fontWeight: "100" }}>
                     {currentTheme === "xp" ? "Professional" : "98"}
                   </span>
